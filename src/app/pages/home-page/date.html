@@ -1,0 +1,342 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Modify the value and click submit to calculate the data</h1>
+        </header>
+        <div class="time-section">
+            <div class="row">
+                <div class="label"></div>
+                <div class="label">Hours</div>
+                <div class="label">Minutes</div>
+                <div class="label">Seconds</div>
+                <div class="label"></div>
+            </div>
+            <div class="row">
+                <div class="label">Start Time</div>
+                <input type="number" min="0" max="12" placeholder="8">
+                <input type="number" min="0" max="59" placeholder="9">
+                <input type="number" min="0" max="59" placeholder="0">
+                <select>
+                    <option>AM</option>
+                    <option>PM</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="label">End Time</div>
+                <input type="number" min="0" max="12" placeholder="10">
+                <input type="number" min="0" max="59" placeholder="0">
+                <input type="number" min="0" max="59" placeholder="12">
+                <select>
+                    <option>AM</option>
+                    <option>PM</option>
+                </select>
+            </div>
+        </div>
+        <div class="buttons">
+            <button onclick="submitData()">Calculate</button>
+            <button onclick="clearData()">Clear</button>
+        </div>
+    </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .time-section {
+            margin-bottom: 20px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .label {
+            width: 80px;
+            text-align: center;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .row .label:first-child {
+            width: 100px;
+            text-align: left;
+        }
+
+        input[type="number"],
+        select {
+            width: 60px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Between Two Dates</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Time Between Two Dates</h1>
+            <p>Use this time and date duration calculator to find out the number of days, hours, minutes, and seconds between the times on two different dates. To add or subtract time from a date, use the Time Calculator.</p>
+        </header>
+        <div class="time-section">
+            <div class="row">
+                <div class="label"></div>
+                <div class="label">Month</div>
+                <div class="label">Day</div>
+                <div class="label">Year</div>
+                <div class="label"></div>
+                <div class="label">Hours</div>
+                <div class="label">Minutes</div>
+                <div class="label">Seconds</div>
+                <div class="label"></div>
+            </div>
+            <div class="row">
+                <div class="label">Start Time</div>
+                <select>
+                    <option>Jan</option>
+                    <option>Feb</option>
+                    <option>Mar</option>
+                    <option>Apr</option>
+                    <option>May</option>
+                    <option>Jun</option>
+                    <option>Jul</option>
+                    <option>Aug</option>
+                    <option>Sep</option>
+                    <option>Oct</option>
+                    <option>Nov</option>
+                    <option>Dec</option>
+                </select>
+                <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                    <option>21</option>
+                    <option>22</option>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                    <option>27</option>
+                    <option>28</option>
+                    <option>29</option>
+                    <option>30</option>
+                    <option>31</option>
+                </select>
+                <input type="number" min="2023" max="2100" placeholder="2024">
+                <div class="spacer"></div>
+                <input type="number" min="0" max="12" placeholder="8">
+                <input type="number" min="0" max="59" placeholder="9">
+                <input type="number" min="0" max="59" placeholder="0">
+                <select>
+                    <option>AM</option>
+                    <option>PM</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="label">End Time</div>
+                <select>
+                    <option>Jan</option>
+                    <option>Feb</option>
+                    <option>Mar</option>
+                    <option>Apr</option>
+                    <option>May</option>
+                    <option>Jun</option>
+                    <option>Jul</option>
+                    <option>Aug</option>
+                    <option>Sep</option>
+                    <option>Oct</option>
+                    <option>Nov</option>
+                    <option>Dec</option>
+                </select>
+                <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                    <option>21</option>
+                    <option>22</option>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                    <option>27</option>
+                    <option>28</option>
+                    <option>29</option>
+                    <option>30</option>
+                    <option>31</option>
+                </select>
+                <input type="number" min="2023" max="2100" placeholder="2024">
+                <div class="spacer"></div>
+                <input type="number" min="0" max="12" placeholder="8">
+                <input type="number" min="0" max="59" placeholder="9">
+                <input type="number" min="0" max="59" placeholder="0">
+                <select>
+                    <option>AM</option>
+                    <option>PM</option>
+                </select>
+            </div>
+        </div>
+        <div class="buttons">
+            <button>Submit</button>
+            <button>Clear</button>
+        </div>
+    </div>
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #555;
+}
+
+.time-section {
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.label {
+    width: 100px;
+    text-align: left;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.row .label {
+    width: 70px;
+    text-align: center;
+}
+
+input[type="number"], select {
+    width: 60px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.spacer {
+    width: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+    </style>
+</body>
+</html>

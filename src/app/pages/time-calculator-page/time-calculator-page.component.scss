@@ -1,0 +1,30 @@
+.calculator-calculator-page {
+  width: 100%;
+  height: calc(100% - 128px);
+  overflow: auto;
+
+  .main-head {
+    margin: auto;
+    width: 55%;
+    padding: 30px;
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-head {
+    padding: 9px !important;
+    font-size: 13px !important;
+    width: 100% !important;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #ffff;
+    padding: 50px;
+    font-size: 20px;
+    z-index: 999;
+  }
+}

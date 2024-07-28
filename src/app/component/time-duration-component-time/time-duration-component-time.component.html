@@ -1,0 +1,153 @@
+<div class="result-container" *ngIf="isShowResult">
+    <h2>Result</h2>
+    <div class="result">
+        <p>{{resultTextMessage}}</p>
+        <p>{{resultText}}</p>
+        <p>{{daysText}}</p>
+        <p>{{hoursText}}</p>
+        <p>{{minutesText}}</p>
+        <p>{{secondsText}}</p>
+    </div>
+</div>
+<div class="duration-date-time">
+    <header>
+        <h1>Time Between Two Dates</h1>
+        <p>Use this time and date duration calculator to find out the number of days, hours, minutes, and seconds
+            between the times on two different dates. To add or subtract time from a date, use the Time Calculator.</p>
+    </header>
+    <div class="time-section flex-column normal-section" *ngIf="!isMobile">
+        <div class="row">
+            <div class="label"></div>
+            <div class="label"></div>
+            <div class="label">Month</div>
+            <div class="label">Day</div>
+            <div class="label">Year</div>
+            <div class="label">Hours</div>
+            <div class="label">Minutes</div>
+            <div class="label">Seconds</div>
+            <div class="label"></div>
+            <div class="label"></div>
+
+        </div>
+        <div class="row">
+            <div class="label">Start Time</div>
+            <select [(ngModel)]="startMonth" (change)="createMonthDays('START')">
+                <option *ngFor="let month of monthsList">{{month}}</option>
+            </select>
+            <select [(ngModel)]="startDay">
+                <option *ngFor="let day of startDayList">{{day}}</option>
+            </select>
+            <input type="number" min="2023" max="2100" placeholder="2024" [(ngModel)]="startYear" appValidateInput>
+            <div class="spacer"></div>
+            <input type="number" min="0" max="12" placeholder="8" [(ngModel)]="startHours" appValidateInput>
+            <input type="number" min="0" max="59" placeholder="9" [(ngModel)]="startMinutes" appValidateInput>
+            <input type="number" min="0" max="59" placeholder="0" [(ngModel)]="startSeconds" appValidateInput>
+            <select [(ngModel)]="startPeriod">
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+            </select>
+        </div>
+        <div class="row">
+            <div class="label">End Time</div>
+            <select [(ngModel)]="endMonth" (change)="createMonthDays('END')">
+                <option *ngFor="let month of monthsList">{{month}}</option>
+            </select>
+            <select [(ngModel)]="endDay">
+                <option *ngFor="let day of endMonthList">{{day}}</option>
+            </select>
+            <input type="number" min="2023" max="2100" placeholder="2024" [(ngModel)]="endYear" appValidateInput>
+            <div class="spacer"></div>
+            <input type="number" min="0" max="12" placeholder="8" [(ngModel)]="endHours" appValidateInput>
+            <input type="number" min="0" max="59" placeholder="9" [(ngModel)]="endMinutes" appValidateInput>
+            <input type="number" min="0" max="59" placeholder="0" [(ngModel)]="endSeconds" appValidateInput>
+            <select [(ngModel)]="endPeriod">
+                <option>AM</option>
+                <option>PM</option>
+            </select>
+        </div>
+        <div class="error-msg" *ngIf="validationMessage">
+            {{validationMessage}}
+        </div>
+    </div>
+    <div class="time-section flex-column mobile-section" *ngIf="isMobile">
+        <div class="mobile-view-label">
+            <div class="label start-time-label">Start Time</div>
+            <div class="value-section">
+                <div class="row">
+                    <div class="label label-month">Month</div>
+                    <div class="label">Day</div>
+                    <div class="label">Year</div>
+                    <div class="label"></div>
+                </div>
+                <div class="row value-row">
+                    <select [(ngModel)]="startMonth" (change)="createMonthDays('START')">
+                        <option *ngFor="let month of monthsList">{{month}}</option>
+                    </select>
+                    <select [(ngModel)]="startDay">
+                        <option *ngFor="let day of startDayList">{{day}}</option>
+                    </select>
+                    <input type="number" min="2023" max="2100" placeholder="2024" [(ngModel)]="startYear"
+                        appValidateInput>
+                </div>
+                <div class="row">
+                    <div class="label label-hours">Hours</div>
+                    <div class="label">Minutes</div>
+                    <div class="label">Seconds</div>
+                    <div class="label"></div>
+                </div>
+                <div class="row value-row value-time">
+                    <input type="number" min="0" max="12" placeholder="8" [(ngModel)]="startHours" appValidateInput>
+                    <input type="number" min="0" max="59" placeholder="9" [(ngModel)]="startMinutes" appValidateInput>
+                    <input type="number" min="0" max="59" placeholder="0" [(ngModel)]="startSeconds" appValidateInput>
+                    <select [(ngModel)]="startPeriod">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-view-label">
+            <div class="label start-time-label">End Time</div>
+            <div class="value-section">
+                <div class="row">
+                    <div class="label label-month">Month</div>
+                    <div class="label">Day</div>
+                    <div class="label">Year</div>
+                    <div class="label"></div>
+                </div>
+                <div class="row value-row">
+                    <select [(ngModel)]="endMonth" (change)="createMonthDays('END')">
+                        <option *ngFor="let month of monthsList">{{month}}</option>
+                    </select>
+                    <select [(ngModel)]="endDay">
+                        <option *ngFor="let day of endMonthList">{{day}}</option>
+                    </select>
+                    <input type="number" min="2023" max="2100" placeholder="2024" [(ngModel)]="endYear"
+                        appValidateInput>
+                </div>
+                <div class="row">
+                    <div class="label label-hours">Hours</div>
+                    <div class="label">Minutes</div>
+                    <div class="label">Seconds</div>
+                    <div class="label"></div>
+                </div>
+                <div class="row value-row value-time">
+                    <input type="number" min="0" max="12" placeholder="8" [(ngModel)]="endHours" appValidateInput>
+                    <input type="number" min="0" max="59" placeholder="9" [(ngModel)]="endMinutes" appValidateInput>
+                    <input type="number" min="0" max="59" placeholder="0" [(ngModel)]="endSeconds" appValidateInput>
+                    <select [(ngModel)]="endPeriod">
+                        <option>AM</option>
+                        <option>PM</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="error-msg" *ngIf="validationMessage">
+            {{validationMessage}}
+        </div>
+    </div>
+    <div class="buttons">
+        <button mat-raised-button color="primary" (click)="calculateDuration()">Calculate</button>
+        <button mat-raised-button color="warn" (click)="clearForm()">Clear</button>
+    </div>
+</div>

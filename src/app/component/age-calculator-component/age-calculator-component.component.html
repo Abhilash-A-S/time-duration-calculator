@@ -1,0 +1,59 @@
+<div class="result-container" *ngIf="isShowResult">
+    <h2>Result</h2>
+    <div class="result">
+        <p>Age:</p>
+        <p>{{ageInYears}} </p>
+        <p>OR&nbsp; {{ageInMonths}} </p>
+        <p>OR&nbsp; {{ageInWeeks}}</p>
+        <p>OR&nbsp; {{ageInDays}}</p>
+        <p>OR&nbsp; {{ageInHours}}</p>
+        <p>OR&nbsp; {{ageInMinutes}}</p>
+        <p>OR&nbsp; {{ageInSeconds}}</p>
+    </div>
+</div>
+<div class="age-calculator">
+    <header>
+        <h1>Calculate Age</h1>
+        <p>The Age Calculator calculates the age or the time span between two dates. The results are presented in a
+            comprehensive format, showing years, months, weeks, days, hours, minutes, and seconds.</p>
+    </header>
+    <div class="time-section flex-column">
+        <div class="row" style="width: 250px;">
+            <div class="label label-row"></div>
+            <div class=" label label-row">Month</div>
+            <div class=" label label-row">Day</div>
+            <div class="label label-row">Year</div>
+        </div>
+        <div class="row">
+            <div class="label date-of-birth">Date of Birth</div>
+            <select [(ngModel)]="startMonth" (change)="createMonthDays('START')">
+                <option *ngFor="let month of monthsList">{{month}}</option>
+            </select>
+            <select [(ngModel)]="startDay">
+                <option *ngFor="let day of startDayList">{{day}}</option>
+            </select>
+            <input type="number" min="2023" max="2100" placeholder="2024" [(ngModel)]="startYear" appValidateInput>
+            <div class="spacer"></div>
+        </div>
+        <div class="row">
+            <div class="label">Age at the point of</div>
+            <select [(ngModel)]="endMonth" (change)="createMonthDays('END')">
+                <option *ngFor="let month of monthsList">{{month}}</option>
+            </select>
+            <select [(ngModel)]="endDay">
+                <option *ngFor="let day of endMonthList">{{day}}</option>
+            </select>
+            <input type="number" min="2023" max="2100" placeholder="2024" [(ngModel)]="endYear" appValidateInput>
+            <div class="spacer"></div>
+        </div>
+        <div class="error-msg" *ngIf="validationMessage">
+            {{validationMessage}}
+        </div>
+    </div>
+    <div class="buttons">
+        <div class="buttons">
+            <button mat-raised-button color="primary" (click)="calculateAge()">Calculate</button>
+            <button mat-raised-button color="warn" (click)="clearFields()">Clear</button>
+        </div>
+    </div>
+</div>

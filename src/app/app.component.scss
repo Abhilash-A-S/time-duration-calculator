@@ -1,0 +1,11 @@
+.content {
+    padding: 20px;
+    height: calc(100% - 150px);
+    width: calc(100% - 40px);
+}
+
+.vertical-panel-section {
+    top: 64px;
+    position: absolute;
+    height: calc(100% - 128px);
+}

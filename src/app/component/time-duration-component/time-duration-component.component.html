@@ -1,0 +1,75 @@
+<div class="result-container" *ngIf="isShowResult">
+    <h2>Result</h2>
+    <div class="result">
+        <p>The time between {{formattedStartTime}} and {{formattedEndTime}} is:</p>
+        <p>{{hours}} hours, {{minutes}} minutes, and {{seconds}} second</p>
+        <p>{{decimalHours}} hours</p>
+        <p>{{totalMinutes}} minutes</p>
+        <p>{{totalSeconds}} seconds</p>
+    </div>
+</div>
+
+<div class="duration-calculator">
+    <header>
+        <h1>Modify the value and click Calculate</h1>
+        <p>Use the calculator below to determine the hours, minutes, and seconds between two times.</p>
+    </header>
+    <div class="time-section">
+        <div class="row">
+            <div class="label"></div>
+            <div class="label">Hours</div>
+            <div class="label">Minutes</div>
+            <div class="label">Seconds</div>
+            <div class="label"></div>
+        </div>
+        <div class="row">
+            <div class="label">Start Time</div>
+            <div class="input-group">
+                <input id="start-hours" type="number" min="0" max="12" placeholder="8" [(ngModel)]="startTime.hours"
+                    appValidateInput>
+            </div>
+            <div class="input-group">
+                <input id="start-minutes" type="number" min="0" max="59" placeholder="9" [(ngModel)]="startTime.minutes"
+                    appValidateInput>
+            </div>
+            <div class="input-group">
+                <input id="start-seconds" type="number" min="0" max="59" placeholder="0" [(ngModel)]="startTime.second"
+                    appValidateInput>
+            </div>
+            <div class="input-group">
+                <select [(ngModel)]="startTime.startPeriod">
+                    <option>AM</option>
+                    <option>PM</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="label">End Time</div>
+            <div class="input-group">
+                <input id="end-hours" type="number" min="0" max="12" placeholder="10" [(ngModel)]="endTime.hours"
+                    appValidateInput>
+            </div>
+            <div class="input-group">
+                <input id="end-minutes" type="number" min="0" max="59" placeholder="0" [(ngModel)]="endTime.minutes"
+                    appValidateInput>
+            </div>
+            <div class="input-group">
+                <input id="end-seconds" type="number" min="0" max="59" placeholder="12" [(ngModel)]="endTime.second"
+                    appValidateInput>
+            </div>
+            <div class="input-group">
+                <select [(ngModel)]="endTime.startPeriod">
+                    <option>AM</option>
+                    <option>PM</option>
+                </select>
+            </div>
+        </div>
+        <div class="error-msg" *ngIf="errorMessage">
+            {{errorMessage}}
+        </div>
+    </div>
+    <div class="buttons">
+        <button mat-raised-button color="primary" (click)="calculateDuration()">Calculate</button>
+        <button mat-raised-button color="warn" (click)="clearButtonClick()">Clear</button>
+    </div>
+</div>

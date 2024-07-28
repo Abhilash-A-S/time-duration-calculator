@@ -1,0 +1,35 @@
+<div class="result-container" *ngIf="isShowResult">
+  <h2>Result</h2>
+  <div class="result">
+    <div *ngFor="let operation of enteredExpression">
+      <p>{{operation}}
+      </p>
+    </div>
+    <div class="divider"></div>
+    <p>{{ finalResult.detailed }}</p>
+    <p>= {{ finalResult.days }} d</p>
+    <p>= {{ finalResult.hours }} h</p>
+    <p>= {{ finalResult.minutes }} m</p>
+    <p>= {{ finalResult.seconds }} s</p>
+  </div>
+</div>
+<div class="time-calculator">
+  <header>
+    <h1>Expression-based Time Calculator</h1>
+    <p>Use this calculator to add or subtract multiple time values in the form of an expression. Each value must be
+      followed by a unit: d for days, h for hours, m for minutes, and s for seconds. Only the + and - operators are
+      allowed. For example, "2d 3h 45m 12s + 1h 20s - 1850s" is a valid expression.</p>
+  </header>
+  <div class="time-section flex-column">
+    <div class="row">
+      <textarea [(ngModel)]="expression" cols="100" rows="8" placeholder="2d 3h 45m 12s + 1h 20s - 1850s"></textarea>
+    </div>
+    <div class="error-msg" *ngIf="errorMessage">
+      {{errorMessage}}
+    </div>
+  </div>
+  <div class="buttons">
+    <button mat-raised-button color="primary" (click)="calculate()">Calculate</button>
+    <button mat-raised-button color="warn" (click)="clearTime()">Clear</button>
+  </div>
+</div>

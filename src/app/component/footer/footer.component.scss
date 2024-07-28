@@ -1,0 +1,26 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 5px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 5px;
+    font-size: 12px;
+    flex-direction: column;
+  }
+}
