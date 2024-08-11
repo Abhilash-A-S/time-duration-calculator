@@ -3,7 +3,7 @@
         <span>&copy; 2024 CALCULATOR.TIME. All rights reserved.</span>
         <button class="fav-button">
             <mat-icon class="favorite-icon" [matTooltip]="tooltipText" (mouseenter)="onMouseEnter()"
-                (dblclick)="onDoubleClick()">
+                (dblclick)="onDoubleClick()" #tooltip="matTooltip">
                 favorite
             </mat-icon>
         </button>
