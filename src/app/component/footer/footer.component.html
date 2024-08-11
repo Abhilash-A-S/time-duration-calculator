@@ -1,3 +1,11 @@
 <mat-toolbar color="accent" class="footer">
-    <span>&copy; 2024 CALCULATOR.TIME. All rights reserved.</span>
+    <span class="d-flex">
+        <span>&copy; 2024 CALCULATOR.TIME. All rights reserved.</span>
+        <button class="fav-button">
+            <mat-icon class="favorite-icon" [matTooltip]="tooltipText" (mouseenter)="onMouseEnter()"
+                (dblclick)="onDoubleClick()">
+                favorite
+            </mat-icon>
+        </button>
+    </span>
 </mat-toolbar>
