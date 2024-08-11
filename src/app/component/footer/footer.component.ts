@@ -17,6 +17,6 @@ export class FooterComponent {
   }
   onDoubleClick(){
     this.tooltip?.show();
-    this.tooltipText = "Powered by Abhilash Swathy";
+    this.tooltipText = "Powered by Abhilash";
   }
 }
